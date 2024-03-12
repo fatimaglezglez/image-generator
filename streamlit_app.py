@@ -9,7 +9,7 @@ st.set_page_config(page_title="Fatima's App",
                    layout="centered")
 
 # Display a header
-st.markdown("# Simple Image Generator :)")
+st.markdown("# Simple Image Generator <3")
 
 # API Token and model 
 REPLICATE_API_TOKEN = os.getenv('REPLICATE_API_TOKEN')
