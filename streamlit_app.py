@@ -13,8 +13,7 @@ st.markdown("# Simple Image Generator :)")
 
 # API Token and model endpoint from `.streamlit/secrets.toml` file
 REPLICATE_API_TOKEN = "r8_ehJx4zMgPENagZGnfeFnZmx6fSfpBjM0teoQf"
-#REPLICATE_MODEL_ENDPOINT = "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"
-REPLICATE_MODEL_ENDPOINTSTABILITY = st.secrets["REPLICATE_MODEL_ENDPOINTSTABILITY"]
+REPLICATE_MODEL_ENDPOINTSTABILITY = "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"
 
 # Setup Replicate
 replicate.api_token = REPLICATE_API_TOKEN
@@ -26,7 +25,7 @@ prompt = st.text_input("Enter your prompt:", value="A beautiful landscape")
 if st.button('Generate Image'):
     with st.spinner('Generating image...'):
         try:
-            output = replicate.run(REPLICATE_MODEL_ENDPOINT, inputs={"prompt": prompt})
+            output = replicate.run(REPLICATE_MODEL_ENDPOINTSTABILITY, inputs={"prompt": prompt})
 
             if output:
                 st.image(output[0], caption="Generated Image")
