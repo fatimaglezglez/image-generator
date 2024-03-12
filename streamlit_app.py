@@ -4,12 +4,12 @@ import streamlit as st
 # Simplified app for generating images with Replicate
 
 # UI configuration
-st.set_page_config(page_title="Simple Replicate Image Generator",
-                   page_icon=":art:",
+st.set_page_config(page_title="Simple Replicate Image Generator :)",
+                   page_icon=":heart:",
                    layout="centered")
 
 # Display a header
-st.markdown("# Simple Image Generator")
+st.markdown("# Simple Image Generator :)")
 
 # API Token and model endpoint from `.streamlit/secrets.toml` file
 REPLICATE_API_TOKEN = st.secrets["r8_ehJx4zMgPENagZGnfeFnZmx6fSfpBjM0teoQf"]
