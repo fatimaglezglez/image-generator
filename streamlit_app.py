@@ -24,8 +24,8 @@ style = st.selectbox(
 )
 prompt_with_style = f"{prompt}, {style}"
 # Submit button
-if st.button('Generate Image'):
-    with st.spinner('Generating image...'):
+if st.button('generate image'):
+    with st.spinner('generating image...'):
         try:
             # Running the model with specific parameters
             output = replicate.run(
@@ -45,7 +45,7 @@ if st.button('Generate Image'):
             )
             if output:
                 # Assuming `output` is a URL to the generated image
-                st.image(output[0], caption="Generated Image")
+                st.image(output[0], caption="generated image")
             else:
                 st.error("No output from the model")
         except Exception as e:
