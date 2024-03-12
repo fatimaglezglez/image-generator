@@ -28,7 +28,7 @@ if st.button('Generate Image'):
     with st.spinner('Generating image...'):
         try:
             # Running the model with specific parameters
-          output = replicate.run(
+            output = replicate.run(
                             REPLICATE_MODEL_ENDPOINTSTABILITY,
                             input={
                                 "prompt": prompt,
