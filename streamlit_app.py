@@ -19,20 +19,35 @@ REPLICATE_MODEL_ENDPOINTSTABILITY = "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89
 replicate.api_token = REPLICATE_API_TOKEN
 
 # Input prompt
+
+# Input prompt
 prompt = st.text_input("Enter your prompt:", value="A beautiful landscape")
 
 # Submit button
 if st.button('Generate Image'):
     with st.spinner('Generating image...'):
         try:
-            output = replicate.run(REPLICATE_MODEL_ENDPOINTSTABILITY, inputs={"prompt": prompt})
-
+            # Running the model with specific parameters
+            output = replicate.run(
+                REPLICATE_MODEL,
+                width=768,
+                height=768,
+                prompt=prompt,
+                refine="expert_ensemble_refiner",
+                scheduler="K_EULER",
+                lora_scale=0.6,
+                num_outputs=1,
+                guidance_scale=7.5,
+                apply_watermark=False,
+                high_noise_frac=0.8,
+                negative_prompt="",
+                prompt_strength=0.8,
+                num_inference_steps=25
+            )
             if output:
+                # Assuming `output` is a URL to the generated image
                 st.image(output[0], caption="Generated Image")
             else:
                 st.error("No output from the model")
         except Exception as e:
             st.error(f"An error occurred: {e}")
-
-# Note: This is a simplified version and assumes that the REPLICATE_MODEL_ENDPOINT
-# is correctly configured to accept a prompt and generate an image.
