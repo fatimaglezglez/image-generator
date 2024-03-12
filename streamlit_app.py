@@ -9,7 +9,7 @@ st.set_page_config(page_title="Fatima's App",
                    layout="centered")
 
 # Display a header
-st.markdown("# simple image generator <3")
+st.markdown("# simple image generator :)")
 
 # API Token and model 
 
