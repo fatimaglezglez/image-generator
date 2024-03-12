@@ -4,8 +4,8 @@ import streamlit as st
 # Simplified app for generating images with Replicate
 
 # UI configuration
-st.set_page_config(page_title="Simple Replicate Image Generator :)",
-                   page_icon=":heart:",
+st.set_page_config(page_title="Fatima's App",
+                   page_icon=":pink_heart:",
                    layout="centered")
 
 # Display a header
