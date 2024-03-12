@@ -10,7 +10,6 @@ from streamlit_image_select import image_select
 st.set_page_config(page_title="Replicate Image Generator",
                    page_icon=":bridge_at_night:",
                    layout="wide")
-icon.show_icon(":foggy:")
 st.markdown("# :rainbow[Your Text-to-Image Artistry Studio]")
 
 # API Tokens and endpoints from `.streamlit/secrets.toml` file
