@@ -1,4 +1,4 @@
-timport replicate
+import replicate
 import streamlit as st
 
 # Simplified app for generating images with Replicate
