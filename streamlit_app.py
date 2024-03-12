@@ -14,8 +14,8 @@ icon.show_icon(":foggy:")
 st.markdown("# :rainbow[Your Text-to-Image Artistry Studio]")
 
 # API Tokens and endpoints from `.streamlit/secrets.toml` file
-REPLICATE_API_TOKEN = st.secrets["REPLICATE_API_TOKEN"]
-REPLICATE_MODEL_ENDPOINTSTABILITY = st.secrets["REPLICATE_MODEL_ENDPOINTSTABILITY"]
+REPLICATE_API_TOKEN = st.secrets["r8_CKKf7sQ96StOjqoxLh9ybZpuCZquzqF0tP1iY"]
+REPLICATE_MODEL_ENDPOINTSTABILITY = st.secrets["stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"]
 
 # Resources text, link, and logo
 replicate_text = "Stability AI SDXL Model on Replicate"
