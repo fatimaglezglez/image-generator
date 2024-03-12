@@ -18,7 +18,6 @@ REPLICATE_MODEL_ENDPOINTSTABILITY = "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89
 
 # Input prompt
 prompt = st.text_input("Enter your prompt:", value="A beautiful landscape")
-prompt2 = prompt + style
 style = st.selectbox(
     'pick a style',
     ('watercolour', 'pixel art', 'photograph')
