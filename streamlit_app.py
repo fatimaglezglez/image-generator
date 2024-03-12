@@ -28,21 +28,20 @@ if st.button('Generate Image'):
     with st.spinner('Generating image...'):
         try:
             # Running the model with specific parameters
-            output = replicate.run(
-                REPLICATE_MODEL_ENDPOINTSTABILITY,
-                width=768,
-                height=768,
-                prompt=prompt,
-                refine="expert_ensemble_refiner",
-                scheduler="K_EULER",
-                lora_scale=0.6,
-                num_outputs=1,
-                guidance_scale=7.5,
-                apply_watermark=False,
-                high_noise_frac=0.8,
-                negative_prompt="",
-                prompt_strength=0.8,
-                num_inference_steps=25
+          output = replicate.run(
+                            REPLICATE_MODEL_ENDPOINTSTABILITY,
+                            input={
+                                "prompt": prompt,
+                                "width": 768,
+                                "height": 768,
+                                "num_outputs": 1,
+                                "scheduler": "K_EULER",
+                                "num_inference_steps": 25,
+                                "guidance_scale": 7.5,
+                                "prompt_stregth":  0,8,
+                                "refine": "expert_ensemble_refiner",
+                                "high_noise_frac":  0.8
+                            }
             )
             if output:
                 # Assuming `output` is a URL to the generated image
