@@ -10,13 +10,14 @@ st.set_page_config(page_title="Fatima's App",
 
 # Display a header
 st.markdown("# Simple Image Generator :))")
+icon.show_icon(":sparkles:")
 
 # API Token and model endpoint from `.streamlit/secrets.toml` file
 REPLICATE_API_TOKEN = "r8_ehJx4zMgPENagZGnfeFnZmx6fSfpBjM0teoQf"
 REPLICATE_MODEL_ENDPOINTSTABILITY = "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"
 
 # Setup Replicate
-replicate.api_token = REPLICATE_API_TOKEN
+#replicate.api_token = REPLICATE_API_TOKEN
 
 # Input prompt
 
