@@ -22,7 +22,7 @@ style = st.selectbox(
     'pick a style',
     ('art-nouveau', 'abstract art', 'photo')
 )
-prompt_with_style = f"{prompt}, {style}"
+prompt_with_style = f"{style} {prompt}"
 # Submit button
 if st.button('generate image'):
     with st.spinner('generating image...'):
