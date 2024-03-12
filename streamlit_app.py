@@ -17,10 +17,10 @@ REPLICATE_MODEL_ENDPOINTSTABILITY = "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89
 #REPLICATE_MODEL_ENDPOINTSTABILITY = "stability-ai/sdxl:2b017d9b67edd2ee1401238df49d75da53c523f36e363881e057f5dc3ed3c5b2"
 
 # Input prompt
-prompt = st.text_input("enter your prompt:", value="a beautiful landscape")
+prompt = st.text_input("enter your prompt:", value="a magical forest")
 style = st.selectbox(
     'pick a style',
-    ('watercolour', 'pixel art', 'photorealistic')
+    ('watercolour', 'pixel art', 'photo)
 )
 prompt_with_style = f"{prompt}, {style}"
 # Submit button
