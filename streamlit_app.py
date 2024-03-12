@@ -38,7 +38,7 @@ if st.button('Generate Image'):
                                 "scheduler": "K_EULER",
                                 "num_inference_steps": 25,
                                 "guidance_scale": 7.5,
-                                "prompt_stregth":  0,8,
+                                "prompt_stregth":  0.8,
                                 "refine": "expert_ensemble_refiner",
                                 "high_noise_frac":  0.8
                             }
