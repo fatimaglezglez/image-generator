@@ -12,17 +12,20 @@ st.set_page_config(page_title="Fatima's App",
 st.markdown("# Simple Image Generator <3")
 
 # API Token and model 
-#REPLICATE_API_TOKEN = os.getenv('REPLICATE_API_TOKEN')
-REPLICATE_API_TOKEN = "r8_JAeYYpbpAiZkPNcdIUhJKuJnHQ3YiOQ3NW7hz"
 
-#REPLICATE_MODEL_ENDPOINTSTABILITY = "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"
-REPLICATE_MODEL_ENDPOINTSTABILITY = "stability-ai/sdxl:2b017d9b67edd2ee1401238df49d75da53c523f36e363881e057f5dc3ed3c5b2"
-
-# Setup Replicate
-#replicate.api_token = REPLICATE_API_TOKEN
+REPLICATE_MODEL_ENDPOINTSTABILITY = "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"
+#REPLICATE_MODEL_ENDPOINTSTABILITY = "stability-ai/sdxl:2b017d9b67edd2ee1401238df49d75da53c523f36e363881e057f5dc3ed3c5b2"
 
 # Input prompt
+ = st.text_input('What is your name?', '')
 prompt = st.text_input("Enter your prompt:", value="A beautiful landscape")
+prompt2 = prompt + style
+style = st.selectbox(
+    'pick a style',
+    ('watercolour', 'pixel art', 'photograph')
+)
+
+prompt2 = prompt + get(style)
 
 # Submit button
 if st.button('Generate Image'):
@@ -32,7 +35,7 @@ if st.button('Generate Image'):
             output = replicate.run(
                             REPLICATE_MODEL_ENDPOINTSTABILITY,
                             input={
-                                "prompt": prompt,
+                                "prompt": prompt2,
                                 "width": 768,
                                 "height": 768,
                                 "num_outputs": 1,
