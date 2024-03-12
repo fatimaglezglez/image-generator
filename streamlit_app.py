@@ -1,11 +1,11 @@
-import replicate
+timport replicate
 import streamlit as st
 
 # Simplified app for generating images with Replicate
 
 # UI configuration
 st.set_page_config(page_title="Fatima's App",
-                   page_icon=":sparkles:",
+                   page_icon=":heart:",
                    layout="centered")
 
 # Display a header
