@@ -12,7 +12,7 @@ st.set_page_config(page_title="Simple Replicate Image Generator",
 st.markdown("# Simple Image Generator")
 
 # API Token and model endpoint from `.streamlit/secrets.toml` file
-REPLICATE_API_TOKEN = st.secrets["r8_GvKzzWD9basAu2cu0Y8qqDGzLM8HivZ0HKqAN"]
+REPLICATE_API_TOKEN = st.secrets["r8_ehJx4zMgPENagZGnfeFnZmx6fSfpBjM0teoQf"]
 REPLICATE_MODEL_ENDPOINTSTABILITY = st.secrets["stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"]
 
 # Setup Replicate
