@@ -22,9 +22,7 @@ style = st.selectbox(
     'pick a style',
     ('watercolour', 'pixel art', 'photograph')
 )
-
-prompt2 = prompt + get(style)
-
+prompt_with_style = f"{prompt}, {style}"
 # Submit button
 if st.button('Generate Image'):
     with st.spinner('Generating image...'):
@@ -33,7 +31,7 @@ if st.button('Generate Image'):
             output = replicate.run(
                             REPLICATE_MODEL_ENDPOINTSTABILITY,
                             input={
-                                "prompt": prompt2,
+                                "prompt": prompt_with_style,
                                 "width": 768,
                                 "height": 768,
                                 "num_outputs": 1,
