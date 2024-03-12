@@ -29,7 +29,7 @@ if st.button('Generate Image'):
         try:
             # Running the model with specific parameters
             output = replicate.run(
-                REPLICATE_MODEL,
+                REPLICATE_MODEL_ENDPOINTSTABILITY,
                 width=768,
                 height=768,
                 prompt=prompt,
