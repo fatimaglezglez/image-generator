@@ -1,56 +1,38 @@
 import replicate
 import streamlit as st
 
-# UI configurations
-st.set_page_config(page_title="Simple Image Generator", page_icon=":sparkles:", layout="wide")
+# Simplified app for generating images with Replicate
 
-# API Tokens and endpoints from `.streamlit/secrets.toml` file
-REPLICATE_API_TOKEN = st.secrets["r8_GvKzzWD9basAu2cu0Y8qqDGzLM8HivZ0HKqAN"]
-REPLICATE_MODEL_ENDPOINTSTABILITY = st.secrets["stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"]
+# UI configuration
+st.set_page_config(page_title="Simple Replicate Image Generator",
+                   page_icon=":art:",
+                   layout="centered")
 
-def generate_image(prompt: str):
-    """
-    Generate an image based on a given prompt.
+# Display a header
+st.markdown("# Simple Image Generator")
 
-    Args:
-        prompt (str): Text prompt for the image generation.
+# API Token and model endpoint from `.streamlit/secrets.toml` file
+REPLICATE_API_TOKEN = st.secrets["REPLICATE_API_TOKEN"]
+REPLICATE_MODEL_ENDPOINT = st.secrets["REPLICATE_MODEL_ENDPOINT"]
 
-    Returns:
-        Image or error message.
-    """
-    try:
-        output = replicate.predictions.create(
-            version=REPLICATE_MODEL_ENDPOINT,
-            input=prompt,
-            api_token=REPLICATE_API_TOKEN
-        )
+# Setup Replicate
+replicate.api_token = REPLICATE_API_TOKEN
 
-        if output:
-            return output[0]["output"]
-    except Exception as e:
-        return f"An error occurred: {e}"
+# Input prompt
+prompt = st.text_input("Enter your prompt:", value="A beautiful landscape")
 
-def main():
-    """
-    Main function to run the Streamlit application.
+# Submit button
+if st.button('Generate Image'):
+    with st.spinner('Generating image...'):
+        try:
+            output = replicate.run(REPLICATE_MODEL_ENDPOINT, inputs={"prompt": prompt})
 
-    This function displays a simple form for user input and calls the
-    generate_image function to display the resulting image.
-    """
-    st.title("Simple Image Generator")
-    
-    with st.form("image_gen_form"):
-        prompt = st.text_area("Enter your prompt here", "A futuristic cityscape at sunset")
-        submitted = st.form_submit_button("Generate Image")
-    
-    if submitted and prompt:
-        with st.spinner('Generating your image...'):
-            result = generate_image(prompt)
-            if result and not result.startswith("An error occurred"):
-                st.image(result, caption="Generated Image")
+            if output:
+                st.image(output[0], caption="Generated Image")
             else:
-                st.error(result)
+                st.error("No output from the model")
+        except Exception as e:
+            st.error(f"An error occurred: {e}")
 
-if __name__ == "__main__":
-    main()
-
+# Note: This is a simplified version and assumes that the REPLICATE_MODEL_ENDPOINT
+# is correctly configured to accept a prompt and generate an image.
