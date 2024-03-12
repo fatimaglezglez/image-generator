@@ -28,7 +28,7 @@ if st.button('Generate Image'):
     with st.spinner('Generating image...'):
         try:
             # Running the model with specific parameters
-          output = replicate.run(
+        output = replicate.run(
                             REPLICATE_MODEL_ENDPOINTSTABILITY,
                             input={
                                 "prompt": prompt,
@@ -43,10 +43,10 @@ if st.button('Generate Image'):
                                 "high_noise_frac":  0.8
                             }
             )
-            if output:
+          if output:
                 # Assuming `output` is a URL to the generated image
                 st.image(output[0], caption="Generated Image")
-            else:
+          else:
                 st.error("No output from the model")
         except Exception as e:
             st.error(f"An error occurred: {e}")
