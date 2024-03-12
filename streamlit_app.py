@@ -20,7 +20,7 @@ REPLICATE_MODEL_ENDPOINTSTABILITY = "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89
 prompt = st.text_input("enter your prompt:", value="vase with flowers")
 style = st.selectbox(
     'pick a style:',
-    ('art-nouveau illustration', 'abstract art', 'stained glass', 'photo')
+    ('art-nouveau', 'abstract art', 'stained glass', 'photo')
 )
 prompt_with_style = f"{style} {prompt}"
 # Submit button
