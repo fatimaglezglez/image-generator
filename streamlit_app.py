@@ -13,6 +13,7 @@ st.markdown("# Simple Image Generator :)")
 
 # API Token and model 
 REPLICATE_API_TOKEN = "r8_JAeYYpbpAiZkPNcdIUhJKuJnHQ3YiOQ3NW7hz"
+
 #REPLICATE_MODEL_ENDPOINTSTABILITY = "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"
 REPLICATE_MODEL_ENDPOINTSTABILITY = "stability-ai/sdxl:2b017d9b67edd2ee1401238df49d75da53c523f36e363881e057f5dc3ed3c5b2"
 
